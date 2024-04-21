@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="d" class="dao.DaoImpl" init-method="init"></bean>
+    <bean id="metier" class="Metier.MetierImpl" init-method="init"> <!-- // dans cette objet metier il exicte une propriete dao-->
+        <property name="dao" ref="d">
+            <!--
+          //Injection de dependance
+          //je veut utiliser la methode setdao pour stocker a dao la valeur 'objet' ==>d
+       //forcement il exicte un set de cette attribue dao
+         // affecter a attribue dao qui exicte dans objet id=metier la valeur de key=d objet
+          pour que spring puisse faire ca il faut qu'il exicte une methode set
+-->
+      </property>
+
+  </bean>
+</beans>
